@@ -1,0 +1,19 @@
+.game-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding: 20px;
+    background: url('../../public/forest-background.jpg') no-repeat center center;
+    background-size: cover;
+    color: white;
+    text-align: center;
+  }
+  
+  .narration {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    max-width: 800px;
+  }
+  

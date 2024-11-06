@@ -1,0 +1,20 @@
+.language-selector {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .language-selector button {
+    padding: 5px 10px;
+    font-size: 1rem;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .language-selector button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  

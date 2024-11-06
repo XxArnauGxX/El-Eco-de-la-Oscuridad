@@ -1,25 +1,47 @@
-import logo from './logo.svg';
-import './App.css';
+// src/App.js
+import React, { useState, useEffect } from 'react';
+import MainMenu from './components/MainMenu';
+import GameScreen from './components/GameScreen';
+import story_es from './story/story_es.json';
+import story_en from './story/story_en.json';
+import './styles/App.css';
+import { useTranslation } from 'react-i18next';
 
-function App() {
+const App = () => {
+  const { i18n } = useTranslation();
+  const [currentStoryId, setCurrentStoryId] = useState(null);
+  const [storyData, setStoryData] = useState(story_es); // Inicializa con español
+
+  // Actualizar storyData cuando cambia el idioma
+  useEffect(() => {
+    if (i18n.language === 'en') {
+      setStoryData(story_en);
+    } else {
+      setStoryData(story_es);
+    }
+    // Resetear la historia al cambiar de idioma
+    setCurrentStoryId(null);
+  }, [i18n.language]);
+
+  const startGame = () => {
+    setCurrentStoryId('start');
+  };
+
+  const handleOptionSelect = (nextStoryId) => {
+    setCurrentStoryId(nextStoryId);
+  };
+
+  const currentStory = currentStoryId ? storyData[currentStoryId] : null;
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {!currentStory ? (
+        <MainMenu onStart={startGame} />
+      ) : (
+        <GameScreen story={currentStory} onOptionSelect={handleOptionSelect} />
+      )}
     </div>
   );
-}
+};
 
 export default App;
