@@ -1,38 +1,119 @@
+/* src/styles/MainMenu.css */
+
 .main-menu {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    background-size: cover;
-    color: white;
-    text-align: center;
-  }
-  
-  .game-title {
-    font-size: 3rem;
-    margin-bottom: 50px;
-    text-shadow: 2px 2px 4px #000;
-  }
-  
-  .buttons {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-  
-  .menu-button {
-    padding: 15px 30px;
-    font-size: 1.5rem;
-    background-color: rgba(0, 0, 0, 0.8);
-    color: #fff;
-    border: 2px solid #fff;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .menu-button:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-  }
-  
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: url('../images/mainMenuBackground.gif') no-repeat center center;
+  background-size: cover;
+  color: #e0e0e0;
+  text-align: center;
+  animation: backgroundMove 20s linear infinite;
+  cursor: url('../images/cursor.webp'), auto;
+  overflow: hidden;
+  z-index: 0; /* Fondo en el nivel más bajo */
+}
+
+.game-title {
+  font-family: 'Creepster', cursive;
+  font-size: 5rem;
+  margin-bottom: 50px;
+  text-shadow: 4px 4px 8px rgba(255, 0, 0, 0.7);
+  animation: flicker 2s infinite;
+  cursor: default;
+  z-index: 2; /* Por encima de las partículas */
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Espacio entre los botones */
+  align-items: center; /* Centra los botones horizontalmente */
+  z-index: 3; /* Por encima de las partículas */
+}
+
+.menu-button {
+  padding: 15px 40px;
+  font-size: 1.5rem;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #ff0000;
+  border: 2px solid #ff0000;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+  font-family: 'Creepster', cursive;
+  position: relative;
+  overflow: hidden;
+  z-index: 3; /* Por encima de las partículas */
+}
+
+.menu-button::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  top: 0;
+  left: -100%;
+  transition: left 0.3s;
+}
+
+.menu-button:hover::before {
+  left: 100%;
+}
+
+.menu-button:hover {
+  background-color: rgba(255, 0, 0, 0.2);
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #ff0000;
+}
+
+.language-selector {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px; /* Separación del botón principal */
+  z-index: 3; /* Por encima de las partículas */
+}
+
+.language-selector button {
+  padding: 6px 12px;
+  font-size: 0.9rem;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.language-selector button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Animaciones existentes */
+@keyframes backgroundMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+}

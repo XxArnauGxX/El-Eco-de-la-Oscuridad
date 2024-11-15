@@ -1,4 +1,5 @@
 // src/App.js
+
 import React, { useState, useEffect } from 'react';
 import MainMenu from './components/MainMenu';
 import GameScreen from './components/GameScreen';
@@ -31,14 +32,15 @@ const App = () => {
     setCurrentStoryId(nextStoryId);
   };
 
-  const currentStory = currentStoryId ? storyData[currentStoryId] : null;
-
   return (
     <div className="App">
-      {!currentStory ? (
+      {!currentStoryId ? (
         <MainMenu onStart={startGame} />
       ) : (
-        <GameScreen story={currentStory} onOptionSelect={handleOptionSelect} />
+        <GameScreen
+          story={storyData[currentStoryId]}
+          onOptionSelect={handleOptionSelect}
+        />
       )}
     </div>
   );

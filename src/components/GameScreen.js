@@ -9,7 +9,7 @@ import { useTranslation } from 'react-i18next';
 const GameScreen = ({ story, onOptionSelect }) => {
   const el = useRef(null);
   const [options, setOptions] = useState([]);
-  const { t } = useTranslation();
+  useTranslation();
 
   useEffect(() => {
     // Animar la entrada del GameScreen
