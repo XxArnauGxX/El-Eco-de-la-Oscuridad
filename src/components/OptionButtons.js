@@ -1,24 +1,27 @@
 // src/components/OptionButtons.js
-import React, { useEffect } from 'react';
-import '../styles/OptionButtons.css';
-import { gsap } from 'gsap';
 
-const OptionButtons = ({ options, onSelect }) => {
-  useEffect(() => {
-    // Animar la aparición de los botones de opciones
-    gsap.from(".option-button", { opacity: 0, y: 20, stagger: 0.2, duration: 0.5 });
-  }, []);
+import React from 'react';
+import '../styles/OptionButtons.css';
+import Button from './Button';
+
+const OptionButtons = ({ options, onOptionSelect }) => {
+  const handleClick = (nextStoryId) => {
+    // Reproducir sonido de selección
+    const selectSound = new Audio('/sounds/select.mp3');
+    selectSound.play();
+    onOptionSelect(nextStoryId);
+  };
 
   return (
     <div className="option-buttons">
       {options.map((option, index) => (
-        <button
+        <Button
           key={index}
-          className="option-button"
-          onClick={() => onSelect(option.nextStory)}
+          onClick={() => handleClick(option.nextStory)}
+          ariaLabel={option.text}
         >
           {option.text}
-        </button>
+        </Button>
       ))}
     </div>
   );

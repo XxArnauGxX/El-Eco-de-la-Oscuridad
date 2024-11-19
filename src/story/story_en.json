@@ -1,193 +1,146 @@
 {
-    "start": {
-      "id": "start",
-      "text": "You find yourself at the edge of an ancient forest at dusk. A sense of unease crawls down your spine. In the distance, you see an old mansion faintly lit. What do you want to do?",
-      "options": [
-        {
-          "text": "Venture into the forest",
-          "nextStory": "forestEntrance"
-        },
-        {
-          "text": "Head towards the mansion",
-          "nextStory": "mansionEntrance"
-        }
-      ]
-    },
-    "forestEntrance": {
-      "id": "forestEntrance",
-      "text": "You decide to venture into the forest. The trees stand tall, and the darkness thickens around you. After walking for a while, you hear a whisper coming from the bushes. What do you do?",
-      "options": [
-        {
-          "text": "Investigate the whisper",
-          "nextStory": "investigateWhisper"
-        },
-        {
-          "text": "Ignore the sound and keep walking",
-          "nextStory": "ignoreSound"
-        }
-      ]
-    },
-    "mansionEntrance": {
-      "id": "mansionEntrance",
-      "text": "You head towards the mansion. The main door is ajar, creaking with the wind. Upon entering, darkness envelops you, but you can make out a lit corridor in the distance. What do you do?",
-      "options": [
-        {
-          "text": "Move towards the lit corridor",
-          "nextStory": "walkCorridor"
-        },
-        {
-          "text": "Look for another entrance",
-          "nextStory": "searchAlternative"
-        }
-      ]
-    },
-    "investigateWhisper": {
-      "id": "investigateWhisper",
-      "text": "You follow the sound and find a small cabin hidden among the trees. The door is slightly open. Upon entering, a spectral figure appears before you. How do you react?",
-      "options": [
-        {
-          "text": "Talk to the ghost",
-          "nextStory": "speakGhost"
-        },
-        {
-          "text": "Run away quickly",
-          "nextStory": "runFromGhost"
-        }
-      ]
-    },
-    "ignoreSound": {
-      "id": "ignoreSound",
-      "text": "You decide to ignore the sound and continue your path. However, you feel someone watching you. Looking back, you see a shadow disappear among the trees. Eventually, you lose your way in the darkness of the forest. Game over.",
-      "options": []
-    },
-    "walkCorridor": {
-      "id": "walkCorridor",
-      "text": "You walk down the lit corridor and find a large hall with a chandelier hanging from the ceiling. In the center, there's an old piano. Suddenly, the keys start playing by themselves. What do you do?",
-      "options": [
-        {
-          "text": "Investigate the piano",
-          "nextStory": "investigatePiano"
-        },
-        {
-          "text": "Exit the hall",
-          "nextStory": "exitHall"
-        }
-      ]
-    },
-    "searchAlternative": {
-      "id": "searchAlternative",
-      "text": "You look for another entrance and find a broken window on the side of the mansion. You decide to climb through it but lose your balance and fall into the backyard, where everything is silent. Suddenly, the mansion lights go out. Game over.",
-      "options": []
-    },
-    "speakGhost": {
-      "id": "speakGhost",
-      "text": "You dare to speak to the ghost. The spirit tells you a tragic story about the mansion and asks for your help to find peace. What do you do?",
-      "options": [
-        {
-          "text": "Agree to help the ghost",
-          "nextStory": "helpGhost"
-        },
-        {
-          "text": "Reject and flee",
-          "nextStory": "rejectGhost"
-        }
-      ]
-    },
-    "runFromGhost": {
-      "id": "runFromGhost",
-      "text": "You decide to run quickly, but the ghost chases you. The branches and roots of the forest seem to trap you. Eventually, you find yourself back at the starting point, but everything has changed and you can't find the way out. Game over.",
-      "options": []
-    },
-    "investigatePiano": {
-      "id": "investigatePiano",
-      "text": "You approach the piano and discover it's covered in dust. When you press a key, a secret compartment opens revealing an old key. What do you do?",
-      "options": [
-        {
-          "text": "Take the key and look for a locked door",
-          "nextStory": "findLockedDoor"
-        },
-        {
-          "text": "Leave the key and exit the hall",
-          "nextStory": "exitHall"
-        }
-      ]
-    },
-    "exitHall": {
-      "id": "exitHall",
-      "text": "You decide to leave the hall. Returning to the corridor, the lights start flickering and you hear approaching footsteps. Suddenly, a dark figure appears in front of you. Game over.",
-      "options": []
-    },
-    "helpGhost": {
-      "id": "helpGhost",
-      "text": "You agree to help the ghost. He guides you to a secret room where lies an ancient diary. Upon reading it, you discover that to free his spirit, you must solve a forgotten mystery. What do you do?",
-      "options": [
-        {
-          "text": "Search for clues in the mansion",
-          "nextStory": "searchClues"
-        },
-        {
-          "text": "Ignore the diary and leave",
-          "nextStory": "ignoreDiary"
-        }
-      ]
-    },
-    "rejectGhost": {
-      "id": "rejectGhost",
-      "text": "You reject helping the ghost and decide to run out of the mansion. However, the doors slam shut, trapping you in darkness, surrounded by whispers and shadows. Game over.",
-      "options": []
-    },
-    "findLockedDoor": {
-      "id": "findLockedDoor",
-      "text": "You use the key to open a locked door at the end of the corridor. Inside, you find a secret chamber with an old mirror. Looking into it, you see a dark future reflected back at you. What do you do?",
-      "options": [
-        {
-          "text": "Look closer at the mirror",
-          "nextStory": "lookCloserMirror"
-        },
-        {
-          "text": "Ignore the mirror and leave",
-          "nextStory": "ignoreMirror"
-        }
-      ]
-    },
-    "searchClues": {
-      "id": "searchClues",
-      "text": "You begin searching for clues in the mansion and find a hidden library. Among the books, you discover notes about ancient rituals to communicate with the beyond. What do you do?",
-      "options": [
-        {
-          "text": "Perform the ritual",
-          "nextStory": "performRitual"
-        },
-        {
-          "text": "Do not perform the ritual and look for another clue",
-          "nextStory": "seekOtherClue"
-        }
-      ]
-    },
-    "ignoreDiary": {
-      "id": "ignoreDiary",
-      "text": "You decide to ignore the diary and leave the mansion. As you walk away, you feel a presence following you. Looking back, you see a shadow fading among the trees. Game over.",
-      "options": []
-    },
-    "lookCloserMirror": {
-      "id": "lookCloserMirror",
-      "text": "You approach the mirror, and a dark force drags you into it, plunging you into a parallel nightmare world. You become part of the echo of darkness. Game over.",
-      "options": []
-    },
-    "ignoreMirror": {
-      "id": "ignoreMirror",
-      "text": "You decide to ignore the mirror and exit the secret chamber. Returning to the corridor, you find a hidden exit that leads you out of the mansion. You manage to escape safely. You have survived The Echo of Darkness!",
-      "options": []
-    },
-    "performRitual": {
-      "id": "performRitual",
-      "text": "You perform the ritual following the diary's instructions. A bright light fills the room, and the ghost's spirit finally finds peace. The mansion begins to fade, and you find yourself back at the edge of the forest at dawn. You have freed the spirit and survived The Echo of Darkness.",
-      "options": []
-    },
-    "seekOtherClue": {
-      "id": "seekOtherClue",
-      "text": "You decide not to perform the ritual and continue searching for other clues. You find a door leading to the basement, where everything is shrouded in darkness. As you descend, you hear macabre laughter around you. Game over.",
-      "options": []
-    }
+  "start": {
+    "id": "start",
+    "text": "You find yourself at the edge of an ancient forest at dusk. A sense of unease crawls down your spine. In the distance, you see an old mansion faintly lit. What do you want to do?",
+    "image": "/images/forest-edge.jpg",
+    "music": "forest.mp3",
+    "options": [
+      {
+        "text": "Venture into the forest",
+        "nextStory": "forestEntrance"
+      },
+      {
+        "text": "Head towards the mansion",
+        "nextStory": "mansionEntrance"
+      }
+    ]
+  },
+  "forestEntrance": {
+    "id": "forestEntrance",
+    "text": "You decide to venture into the forest. The trees stand tall, and the darkness thickens around you. After walking for a while, you hear a whisper coming from the bushes. What do you do?",
+    "image": "/images/forest.jpg",
+    "music": "forest.mp3",
+    "options": [
+      {
+        "text": "Investigate the whisper",
+        "nextStory": "investigateWhisper"
+      },
+      {
+        "text": "Ignore the sound and keep walking",
+        "nextStory": "ignoreSound"
+      }
+    ]
+  },
+  "mansionEntrance": {
+    "id": "mansionEntrance",
+    "text": "You head towards the mansion. The main door is ajar, creaking with the wind. Upon entering, darkness envelops you, but you can make out a lit corridor in the distance. What do you do?",
+    "image": "/images/mansionEntrance.jpg",
+    "music": "mansion.mp3",
+    "options": [
+      {
+        "text": "Move towards the lit corridor",
+        "nextStory": "walkCorridor"
+      },
+      {
+        "text": "Look for another entrance",
+        "nextStory": "searchAlternative"
+      }
+    ]
+  },
+  "investigateWhisper": {
+    "id": "investigateWhisper",
+    "text": "You follow the sound and find a small cabin hidden among the trees. The door is slightly open. Upon entering, a spectral figure appears before you. How do you react?",
+    "image": "/images/cabin.jpg",
+    "music": "ghost.wav",
+    "options": [
+      {
+        "text": "Talk to the ghost",
+        "nextStory": "speakGhost",
+        "action": { "type": "add", "item": "Ancient Scroll" }
+      },
+      {
+        "text": "Run away quickly",
+        "nextStory": "runFromGhost"
+      }
+    ]
+  },
+  "ignoreSound": {
+    "id": "ignoreSound",
+    "text": "You decide to ignore the whisper and keep walking. However, the feeling of being watched doesn't fade. Suddenly, a shadow slides between the trees towards you. Game over.",
+    "options": []
+  },
+  "speakGhost": {
+    "id": "speakGhost",
+    "text": "You speak to the ghost, who reveals that it needs help to find peace. It hands you an ancient scroll and slowly fades away. What do you do now?",
+    "image": "/images/ghost.png",
+    "music": "ghost.wav",
+    "options": [
+      {
+        "text": "Look for clues in the cabin",
+        "nextStory": "searchClues",
+        "action": { "type": "add", "item": "Rusty Key" }
+      },
+      {
+        "text": "Exit the cabin",
+        "nextStory": "exitCabin"
+      }
+    ]
+  },
+  "runFromGhost": {
+    "id": "runFromGhost",
+    "text": "You run as fast as you can, but the darkness seems to envelop you more. You fail to escape and get lost in the forest forever. Game over.",
+    "options": []
+  },
+  "walkCorridor": {
+    "id": "walkCorridor",
+    "text": "You walk down the lit corridor and find an ancient library. Among the books, you see an abandoned diary. What do you do?",
+    "image": "/images/library.jpg",
+    "music": "library.mp3",
+    "options": [
+      {
+        "text": "Read the diary",
+        "nextStory": "readDiary"
+      },
+      {
+        "text": "Search another room",
+        "nextStory": "searchRoom"
+      }
+    ]
+  },
+  "searchAlternative": {
+    "id": "searchAlternative",
+    "text": "You look for another entrance and find a broken window on the upper floor. You climb up and manage to enter quietly. However, a dark presence watches you from the shadows. Game over.",
+    "options": []
+  },
+  "readDiary": {
+    "id": "readDiary",
+    "text": "You read the diary and discover details about ancient rituals to communicate with the beyond. There's a page that talks about an enchanted mirror in the basement. What do you do?",
+    "image": "/images/diary.jpg",
+    "music": "reading.mp3",
+    "options": [
+      {
+        "text": "Search for the mirror in the basement",
+        "nextStory": "searchMirror"
+      },
+      {
+        "text": "Close the diary and leave",
+        "nextStory": "closeDiary"
+      }
+    ]
+  },
+  "searchRoom": {
+    "id": "searchRoom",
+    "text": "You explore another room and find a secret door leading to a dark chamber. In the center, there's an old mirror. As you look into it, you see not your face, but a shadow that grins menacingly. Game over.",
+    "options": []
+  },
+  "searchMirror": {
+    "id": "searchMirror",
+    "text": "You descended into the basement and find the enchanted mirror. As you approach, a dark force drags you into it, immersing you in a parallel nightmare world. Game over.",
+    "options": []
+  },
+  "closeDiary": {
+    "id": "closeDiary",
+    "text": "You decide to close the diary and leave the library. As you walk away, you feel a presence following you. Looking back, you see a shadow fading among the trees. Game over.",
+    "options": []
   }
-  
+}

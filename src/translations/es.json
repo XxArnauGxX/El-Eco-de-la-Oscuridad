@@ -1,5 +1,9 @@
 {
-    "play": "Jugar",
-    "restart": "Reiniciar"
-  }
-  
+  "play": "Jugar",
+  "load": "Cargar",
+  "save": "Guardar",
+  "restart": "Reiniciar",
+  "muteBackground": "Silenciar Música de Fondo",
+  "muteEffects": "Silenciar Efectos Sonoros",
+  "shareText": "Estoy jugando 'El Eco de la Oscuridad'. ¡Únete a la aventura!"
+}

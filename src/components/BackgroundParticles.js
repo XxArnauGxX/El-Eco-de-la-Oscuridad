@@ -29,7 +29,7 @@ const BackgroundParticles = () => {
         fpsLimit: 60,
         particles: {
           number: {
-            value: 100,
+            value: 80,
             density: {
               enable: true,
               area: 800,
@@ -42,12 +42,12 @@ const BackgroundParticles = () => {
             type: "circle",
           },
           opacity: {
-            value: 0.8,
+            value: 0.7,
             random: true,
             anim: {
               enable: true,
               speed: 1,
-              opacity_min: 0.5,
+              opacity_min: 0.3,
               sync: false,
             },
           },
@@ -58,7 +58,7 @@ const BackgroundParticles = () => {
           move: {
             direction: "bottom",
             enable: true,
-            speed: { min: 1, max: 3 },
+            speed: { min: 1, max: 2 },
             straight: false,
             outModes: {
               default: "out",
@@ -84,7 +84,6 @@ const BackgroundParticles = () => {
         width: '100%',
         height: '100%',
         zIndex: 1, // Debajo de los botones
-        /* Elimina temporalmente las superposiciones diagnóstico */
       }}
     />
   );

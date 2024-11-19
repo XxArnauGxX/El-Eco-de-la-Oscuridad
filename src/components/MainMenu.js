@@ -1,58 +1,57 @@
+// src/components/MainMenu.js
+
 import React, { useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import LanguageSelector from './LanguageSelector';
 import { gsap } from 'gsap';
 import '../styles/MainMenu.css';
 import BackgroundParticles from './BackgroundParticles';
+import Button from './Button';
 
 const MainMenu = ({ onStart }) => {
   const { t } = useTranslation();
-  const backgroundAudioRef = useRef(null);
-  const whisperAudioRef = useRef(null);
+  const titleRef = useRef(null);
+  const buttonsRef = useRef(null);
+  const backgroundMusicRef = useRef(new Audio('/music/menu-music.mp3'));
 
   useEffect(() => {
-    backgroundAudioRef.current = new Audio('/music/background.mp3');
-    backgroundAudioRef.current.loop = true;
+    // Configurar y reproducir música de fondo
+    const backgroundMusic = backgroundMusicRef.current;
+    backgroundMusic.loop = true;
+    backgroundMusic.volume = 0.5;
+    backgroundMusic.play().catch((error) => {
+      console.error("Error al reproducir la música de fondo:", error);
+    });
 
-    whisperAudioRef.current = new Audio('/sounds/click.mp3');
-    whisperAudioRef.current.loop = true;
-    whisperAudioRef.current.volume = 0.3;
+    // Animaciones con GSAP
+    gsap.from(titleRef.current, { opacity: 0, y: -50, duration: 2, ease: "back.out(1.7)" });
+    gsap.from(buttonsRef.current.children, {
+      opacity: 0,
+      y: 20,
+      stagger: 0.2,
+      duration: 1,
+      ease: "power2.out",
+      delay: 1
+    });
+
+    // Limpieza al desmontar
+    return () => {
+      backgroundMusic.pause();
+    };
   }, []);
 
-  useEffect(() => {
-    const timeline = gsap.timeline();
-    timeline
-      .from(".game-title", { opacity: 0, y: -100, duration: 1.5, ease: "power2.out", zIndex: 2 })
-      .from(".menu-button", { opacity: 0, y: 50, duration: 1, stagger: 0.2, zIndex: 3 }, "-=1")
-      .from(".language-selector", { opacity: 0, y: 50, duration: 1, zIndex: 3 }, "-=0.5");
-  }, []);
-
-  const handleClick = () => {
-    if (whisperAudioRef.current) {
-      whisperAudioRef.current.play().catch((error) => {
-        console.error("Error al reproducir whisperAudio:", error);
-      });
-    }
-    if (backgroundAudioRef.current) {
-      backgroundAudioRef.current.play().catch((error) => {
-        console.error("Error al reproducir backgroundAudio:", error);
-      });
-    }
+  const handleStart = () => {
     onStart();
   };
 
   return (
     <div className="main-menu" role="main">
       <BackgroundParticles />
-      <h1 className="game-title">El Eco de la Oscuridad</h1>
-      <div className="buttons">
-        <button
-          className="menu-button"
-          onClick={handleClick}
-          aria-label={t('play')}
-        >
+      <h1 className="game-title" ref={titleRef}>El Eco de la Oscuridad</h1>
+      <div className="buttons" ref={buttonsRef}>
+        <Button onClick={handleStart} ariaLabel={t('play')}>
           {t('play')}
-        </button>
+        </Button>
         <LanguageSelector />
       </div>
     </div>

@@ -1,20 +1,25 @@
+/* src/styles/LanguageSelector.css */
+
 .language-selector {
-    display: flex;
-    gap: 10px;
-  }
-  
-  .language-selector button {
-    padding: 5px 10px;
-    font-size: 1rem;
-    background-color: rgba(0, 0, 0, 0.6);
-    color: #fff;
-    border: 1px solid #fff;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .language-selector button:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-  }
-  
+  display: flex;
+  gap: 10px;
+  margin-top: 20px; /* Separación del botón principal */
+  z-index: 3; /* Por encima de las partículas */
+}
+
+.language-selector button {
+  padding: 6px 12px;
+  font-size: 0.9rem;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  font-family: 'Creepster', cursive;
+}
+
+.language-selector button:hover {
+  background-color: rgba(255, 0, 0, 0.7);
+  transform: scale(1.1);
+}

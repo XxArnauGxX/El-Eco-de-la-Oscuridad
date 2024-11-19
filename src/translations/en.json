@@ -1,5 +1,9 @@
 {
-    "play": "Play",
-    "restart": "Restart"
-  }
-  
+  "play": "Play",
+  "load": "Load",
+  "save": "Save",
+  "restart": "Restart",
+  "muteBackground": "Mute Background Music",
+  "muteEffects": "Mute Sound Effects",
+  "shareText": "I'm playing 'The Echo of Darkness'. Join the adventure!"
+}

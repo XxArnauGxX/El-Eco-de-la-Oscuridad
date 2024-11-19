@@ -2,6 +2,8 @@
   "start": {
     "id": "start",
     "text": "Te encuentras al borde de un antiguo bosque al anochecer. Una sensación de inquietud te recorre la espalda. En la distancia, ves una vieja mansión iluminada tenuemente. ¿Qué deseas hacer?",
+    "image": "/images/forest-edge.jpg",
+    "music": "forest.mp3",
     "options": [
       {
         "text": "Adentrarse en el bosque",
@@ -16,6 +18,8 @@
   "forestEntrance": {
     "id": "forestEntrance",
     "text": "Decides adentrarte en el bosque. Los árboles se alzan altos y la oscuridad se espesa a tu alrededor. Después de caminar un rato, escuchas un susurro proveniente de entre los arbustos. ¿Qué haces?",
+    "image": "/images/forest.jpg",
+    "music": "forest.mp3",
     "options": [
       {
         "text": "Investigar el susurro",
@@ -30,6 +34,8 @@
   "mansionEntrance": {
     "id": "mansionEntrance",
     "text": "Te diriges hacia la mansión. La puerta principal está entreabierta, chirriando con el viento. Al entrar, la oscuridad te envuelve, pero puedes distinguir un corredor iluminado al fondo. ¿Qué haces?",
+    "image": "/images/mansionEntrance.jpg",
+    "music": "mansion.mp3",
     "options": [
       {
         "text": "Avanzar hacia el corredor iluminado",
@@ -44,10 +50,13 @@
   "investigateWhisper": {
     "id": "investigateWhisper",
     "text": "Sigues el sonido y encuentras una pequeña cabaña oculta entre los árboles. La puerta está entreabierta. Al entrar, una figura espectral aparece ante ti. ¿Cómo reaccionas?",
+    "image": "/images/cabin.jpg",
+    "music": "ghost.wav",
     "options": [
       {
         "text": "Hablar con el espectro",
-        "nextStory": "speakGhost"
+        "nextStory": "speakGhost",
+        "action": { "type": "add", "item": "Pergamino Antiguo" }
       },
       {
         "text": "Huir rápidamente",
@@ -57,136 +66,81 @@
   },
   "ignoreSound": {
     "id": "ignoreSound",
-    "text": "Decides ignorar el sonido y continuar tu camino. Sin embargo, sientes que alguien te observa. Al mirar atrás, ves una sombra desaparecer entre los árboles. Finalmente, te pierdes en la oscuridad del bosque. Fin del juego.",
-    "options": []
-  },
-  "walkCorridor": {
-    "id": "walkCorridor",
-    "text": "Avanzas por el corredor iluminado y encuentras una gran sala con un candelabro colgando del techo. En el centro, hay un viejo piano. De repente, las teclas comienzan a tocarse solas. ¿Qué haces?",
-    "options": [
-      {
-        "text": "Investigar el piano",
-        "nextStory": "investigatePiano"
-      },
-      {
-        "text": "Salir de la sala",
-        "nextStory": "exitHall"
-      }
-    ]
-  },
-  "searchAlternative": {
-    "id": "searchAlternative",
-    "text": "Buscas otra entrada y encuentras una ventana rota en el lateral de la mansión. Decides trepar por ella, pero pierdes el equilibrio y caes en el jardín trasero, donde todo está en silencio. De repente, las luces de la mansión se apagan. Fin del juego.",
+    "text": "Decides ignorar el susurro y seguir caminando. Sin embargo, la sensación de ser observado no desaparece. De repente, una sombra se desliza entre los árboles hacia ti. Fin del juego.",
     "options": []
   },
   "speakGhost": {
     "id": "speakGhost",
-    "text": "Te atreves a hablar con el espectro. El espíritu te cuenta una historia trágica sobre la mansión y te pide ayuda para encontrar la paz. ¿Qué haces?",
+    "text": "Le hablas al espectro, quien te revela que necesita ayuda para encontrar su paz. Te entrega un pergamino antiguo y desaparece lentamente. ¿Qué haces ahora?",
+    "image": "/images/ghost.png",
+    "music": "ghost.wav",
     "options": [
       {
-        "text": "Aceptar ayudar al espectro",
-        "nextStory": "helpGhost"
+        "text": "Buscar pistas en la cabaña",
+        "nextStory": "searchClues",
+        "action": { "type": "add", "item": "Llave Oxidada" }
       },
       {
-        "text": "Rechazar y huir",
-        "nextStory": "rejectGhost"
+        "text": "Salir de la cabaña",
+        "nextStory": "exitCabin"
       }
     ]
   },
   "runFromGhost": {
     "id": "runFromGhost",
-    "text": "Decides huir rápidamente, pero el espectro te persigue. Las ramas y raíces del bosque parecen atraparte. Finalmente, te encuentras de vuelta en el punto de partida, pero todo ha cambiado y no puedes encontrar la salida. Fin del juego.",
+    "text": "Corres tan rápido como puedes, pero sientes que la oscuridad te envuelve cada vez más. No logras escapar y te pierdes en el bosque para siempre. Fin del juego.",
     "options": []
   },
-  "investigatePiano": {
-    "id": "investigatePiano",
-    "text": "Te acercas al piano y descubres que está cubierto de polvo. Al tocar una tecla, se abre un compartimento secreto revelando una llave antigua. ¿Qué haces?",
+  "walkCorridor": {
+    "id": "walkCorridor",
+    "text": "Avanzas por el corredor iluminado y encuentras una biblioteca antigua. Entre los libros, ves un diario abandonado. ¿Qué haces?",
+    "image": "/images/library.jpg",
+    "music": "library.mp3",
     "options": [
       {
-        "text": "Tomar la llave y buscar una puerta cerrada",
-        "nextStory": "findLockedDoor"
+        "text": "Leer el diario",
+        "nextStory": "readDiary"
       },
       {
-        "text": "Dejar la llave y salir de la sala",
-        "nextStory": "exitHall"
+        "text": "Buscar otra habitación",
+        "nextStory": "searchRoom"
       }
     ]
   },
-  "exitHall": {
-    "id": "exitHall",
-    "text": "Decides salir de la sala. Al volver al corredor, las luces comienzan a parpadear y escuchas pasos acercándose. De repente, una figura oscura aparece frente a ti. Fin del juego.",
+  "searchAlternative": {
+    "id": "searchAlternative",
+    "text": "Buscas otra entrada y encuentras una ventana rota en el piso superior. Te subes y logras entrar silenciosamente. Sin embargo, una presencia oscura te observa desde las sombras. Fin del juego.",
     "options": []
   },
-  "helpGhost": {
-    "id": "helpGhost",
-    "text": "Aceptas ayudar al espectro. Él te guía hacia una habitación secreta donde yace un diario antiguo. Al leerlo, descubres que para liberar su espíritu debes resolver un misterio olvidado. ¿Qué haces?",
+  "readDiary": {
+    "id": "readDiary",
+    "text": "Lees el diario y descubres detalles sobre rituales antiguos para comunicarte con el más allá. Hay una página que habla de un espejo encantado en el sótano. ¿Qué haces?",
+    "image": "/images/diary.jpg",
+    "music": "reading.mp3",
     "options": [
       {
-        "text": "Buscar pistas en la mansión",
-        "nextStory": "searchClues"
+        "text": "Buscar el espejo en el sótano",
+        "nextStory": "searchMirror"
       },
       {
-        "text": "Ignorar el diario y salir",
-        "nextStory": "ignoreDiary"
+        "text": "Cerrar el diario y salir",
+        "nextStory": "closeDiary"
       }
     ]
   },
-  "rejectGhost": {
-    "id": "rejectGhost",
-    "text": "Rechazas ayudar al espectro y decides salir corriendo de la mansión. Sin embargo, las puertas se cierran de golpe y te encuentras atrapado en la oscuridad, rodeado de susurros y sombras. Fin del juego.",
+  "searchRoom": {
+    "id": "searchRoom",
+    "text": "Exploras otra habitación y encuentras una puerta secreta que lleva a una cámara oscura. En el centro, hay un espejo antiguo. Al mirarte, ves reflejado no tu rostro, sino una sombra que te sonríe macabramente. Fin del juego.",
     "options": []
   },
-  "findLockedDoor": {
-    "id": "findLockedDoor",
-    "text": "Usas la llave para abrir una puerta cerrada en el fondo del corredor. Al entrar, encuentras una cámara secreta con un antiguo espejo. Al mirarte, ves reflejado un futuro oscuro. ¿Qué haces?",
-    "options": [
-      {
-        "text": "Mirar más de cerca el espejo",
-        "nextStory": "lookCloserMirror"
-      },
-      {
-        "text": "Ignorar el espejo y salir",
-        "nextStory": "ignoreMirror"
-      }
-    ]
-  },
-  "searchClues": {
-    "id": "searchClues",
-    "text": "Comienzas a buscar pistas en la mansión y encuentras una biblioteca oculta. Entre los libros, descubres notas sobre rituales antiguos para comunicarte con el más allá. ¿Qué haces?",
-    "options": [
-      {
-        "text": "Realizar el ritual",
-        "nextStory": "performRitual"
-      },
-      {
-        "text": "No realizar el ritual y buscar otra pista",
-        "nextStory": "seekOtherClue"
-      }
-    ]
-  },
-  "ignoreDiary": {
-    "id": "ignoreDiary",
-    "text": "Decides ignorar el diario y salir de la mansión. Mientras te alejas, sientes que una presencia te sigue. Al mirar atrás, ves una sombra que se desvanece entre los árboles. Fin del juego.",
+  "searchMirror": {
+    "id": "searchMirror",
+    "text": "Descendiste al sótano y encuentras el espejo encantado. Al acercarte, una fuerza oscura te arrastra hacia él, sumergiéndote en un mundo paralelo de pesadilla. Fin del juego.",
     "options": []
   },
-  "lookCloserMirror": {
-    "id": "lookCloserMirror",
-    "text": "Te acercas al espejo y una fuerza oscura te arrastra hacia él, sumergiéndote en un mundo paralelo de pesadilla. Te conviertes en parte del eco de la oscuridad. Fin del juego.",
-    "options": []
-  },
-  "ignoreMirror": {
-    "id": "ignoreMirror",
-    "text": "Decides ignorar el espejo y salir de la cámara secreta. Al regresar al corredor, encuentras una salida secreta que te lleva fuera de la mansión. Logras escapar sano y salvo. ¡Has sobrevivido al Eco de la Oscuridad!",
-    "options": []
-  },
-  "performRitual": {
-    "id": "performRitual",
-    "text": "Realizas el ritual siguiendo las instrucciones del diario. Una luz brillante llena la habitación y el espíritu del espectro finalmente encuentra la paz. La mansión comienza a desvanecerse, y te encuentras de nuevo al borde del bosque al amanecer. Has liberado al espíritu y sobrevivido al Eco de la Oscuridad.",
-    "options": []
-  },
-  "seekOtherClue": {
-    "id": "seekOtherClue",
-    "text": "Decides no realizar el ritual y continúas buscando otras pistas. Encuentras una puerta que conduce al sótano, donde todo está sumido en la oscuridad. Al bajar, escuchas risas macabras a tu alrededor. Fin del juego.",
+  "closeDiary": {
+    "id": "closeDiary",
+    "text": "Decides cerrar el diario y salir de la biblioteca. Mientras te alejas, sientes que una presencia te sigue. Al mirar atrás, ves una sombra que se desvanece entre los árboles. Fin del juego.",
     "options": []
   }
 }
