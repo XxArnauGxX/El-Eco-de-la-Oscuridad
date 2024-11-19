@@ -1,49 +1,68 @@
 // src/App.js
-
 import React, { useState, useEffect } from 'react';
 import MainMenu from './components/MainMenu';
 import GameScreen from './components/GameScreen';
-import story_es from './story/story_es.json';
-import story_en from './story/story_en.json';
 import './styles/App.css';
 import { useTranslation } from 'react-i18next';
 
-const App = () => {
+function App() {
   const { i18n } = useTranslation();
-  const [currentStoryId, setCurrentStoryId] = useState(null);
-  const [storyData, setStoryData] = useState(story_es); // Inicializa con español
+  const [storyData, setStoryData] = useState(null);
+  const [gameStarted, setGameStarted] = useState(false);
+  const [error, setError] = useState(null); // Nuevo estado para manejar errores
 
-  // Actualizar storyData cuando cambia el idioma
+  const language = i18n.language || 'es'; // Obtener el idioma actual
+
   useEffect(() => {
-    if (i18n.language === 'en') {
-      setStoryData(story_en);
-    } else {
-      setStoryData(story_es);
-    }
-    // Resetear la historia al cambiar de idioma
-    setCurrentStoryId(null);
-  }, [i18n.language]);
+    const fetchStory = async () => {
+      console.log(`Intentando cargar la historia en el idioma: ${language}`);
+      try {
+        const response = await fetch(`/story/story_${language}.json`);
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const data = await response.json();
+        setStoryData(data);
+      } catch (error) {
+        console.error('Error al cargar la historia:', error);
+        setError(error.message); // Guardar el mensaje de error
+      }
+    };
 
-  const startGame = () => {
-    setCurrentStoryId('start');
+    fetchStory();
+  }, [language]);
+
+  const handleStart = () => {
+    setGameStarted(true);
   };
 
-  const handleOptionSelect = (nextStoryId) => {
-    setCurrentStoryId(nextStoryId);
-  };
+  if (storyData === null && !error) {
+    return (
+      <div className="loading">
+        <div className="spinner"></div>
+        <p>Cargando historia...</p>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="error-message">
+        <p>Hubo un problema al cargar la historia: {error}. Por favor, intenta recargar la página.</p>
+      </div>
+    );
+  }
 
   return (
-    <div className="App">
-      {!currentStoryId ? (
-        <MainMenu onStart={startGame} />
+    <div className="app">
+      {/* Pantalla de Menú Principal o Juego */}
+      {!gameStarted ? (
+        <MainMenu onStart={handleStart} />
       ) : (
-        <GameScreen
-          story={storyData[currentStoryId]}
-          onOptionSelect={handleOptionSelect}
-        />
+        <GameScreen storyData={storyData} />
       )}
     </div>
   );
-};
+}
 
 export default App;

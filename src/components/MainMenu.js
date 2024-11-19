@@ -1,5 +1,4 @@
 // src/components/MainMenu.js
-
 import React, { useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import LanguageSelector from './LanguageSelector';
@@ -41,6 +40,7 @@ const MainMenu = ({ onStart }) => {
   }, []);
 
   const handleStart = () => {
+    backgroundMusicRef.current.pause(); // Detener la música al iniciar el juego
     onStart();
   };
 

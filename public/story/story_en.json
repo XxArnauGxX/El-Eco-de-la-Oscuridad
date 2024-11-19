@@ -1,0 +1,194 @@
+{
+  "start": {
+    "id": "start",
+    "text": "You find yourself at the edge of an ancient forest at dusk. A sense of unease crawls down your spine. In the distance, you see an old mansion faintly lit. What do you want to do?",
+    "image": "/images/start.webp",
+    "music": "forest.mp3",
+    "options": [
+      {
+        "text": "Venture into the forest",
+        "nextStory": "forestEntrance"
+      },
+      {
+        "text": "Head towards the mansion",
+        "nextStory": "mansionEntrance"
+      }
+    ]
+  },
+  "forestEntrance": {
+    "id": "forestEntrance",
+    "text": "You decide to venture into the forest. The trees stand tall, and the darkness thickens around you. After walking for a while, you hear a whisper coming from the bushes. What do you do?",
+    "image": "/images/forestEntrance.webp",
+    "music": "forest.mp3",
+    "options": [
+      {
+        "text": "Investigate the whisper",
+        "nextStory": "investigateWhisper"
+      },
+      {
+        "text": "Ignore the sound and keep walking",
+        "nextStory": "ignoreSound"
+      }
+    ]
+  },
+  "mansionEntrance": {
+    "id": "mansionEntrance",
+    "text": "You head towards the mansion. The main door is ajar, creaking with the wind. Upon entering, darkness envelops you, but you can make out a lit corridor in the distance. What do you do?",
+    "image": "/images/mansionEntrance.webp",
+    "music": "mansion.mp3",
+    "options": [
+      {
+        "text": "Move towards the lit corridor",
+        "nextStory": "walkCorridor"
+      },
+      {
+        "text": "Look for another entrance",
+        "nextStory": "searchAlternative"
+      }
+    ]
+  },
+  "investigateWhisper": {
+    "id": "investigateWhisper",
+    "text": "You follow the sound and find a small cabin hidden among the trees. The door is slightly open. Upon entering, a spectral figure appears before you. How do you react?",
+    "image": "/images/investigateWhisper.webp",
+    "music": "ghost.wav",
+    "options": [
+      {
+        "text": "Talk to the ghost",
+        "nextStory": "speakGhost"
+      },
+      {
+        "text": "Run away quickly",
+        "nextStory": "continuara"
+      }
+    ]
+  },
+  "ignoreSound": {
+    "id": "ignoreSound",
+    "text": "You decide to ignore the whisper and keep walking. However, the feeling of being watched doesn't fade. Suddenly, a shadow slides between the trees towards you. To be continued...",
+    "image": "/images/ignoreSound.webp",
+    "music": "shadow.mp3",
+    "options": [
+      {
+        "text": "Continue the adventure",
+        "nextStory": "continuara"
+      }
+    ]
+  },
+  "speakGhost": {
+    "id": "speakGhost",
+    "text": "You speak to the ghost, who reveals that it needs help to find peace. It hands you an ancient scroll and slowly fades away. What do you do now?",
+    "image": "/images/speakGhost.webp",
+    "music": "ghost.wav",
+    "options": [
+      {
+        "text": "Look for clues in the cabin",
+        "nextStory": "searchClues"
+      },
+      {
+        "text": "Exit the cabin",
+        "nextStory": "continuara"
+      }
+    ]
+  },
+  "walkCorridor": {
+    "id": "walkCorridor",
+    "text": "You walk down the lit corridor and find an ancient library. Among the books, you see an abandoned diary. What do you do?",
+    "image": "/images/walkCorridor.webp",
+    "music": "library.mp3",
+    "options": [
+      {
+        "text": "Read the diary",
+        "nextStory": "readDiary"
+      },
+      {
+        "text": "Search another room",
+        "nextStory": "continuara"
+      }
+    ]
+  },
+  "searchAlternative": {
+    "id": "searchAlternative",
+    "text": "You look for another entrance and find a broken window on the upper floor. You climb up and manage to enter quietly. However, a dark presence watches you from the shadows. To be continued...",
+    "image": "/images/searchAlternative.webp",
+    "music": "darkPresence.mp3",
+    "options": [
+      {
+        "text": "Continue the adventure",
+        "nextStory": "continuara"
+      }
+    ]
+  },
+  "searchClues": {
+    "id": "searchClues",
+    "text": "You explore the cabin and find a secret room where you discover a rusty key and more ancient scrolls. The key seems to fit a hidden door in the mansion. To be continued...",
+    "image": "/images/searchClues.webp",
+    "music": "secretRoom.mp3",
+    "options": [
+      {
+        "text": "Return to the mansion",
+        "nextStory": "continuara"
+      }
+    ]
+  },
+  "readDiary": {
+    "id": "readDiary",
+    "text": "You read the diary and uncover details about ancient rituals to communicate with the beyond. There's a page that talks about an enchanted mirror in the basement. To be continued...",
+    "image": "/images/readDiary.webp",
+    "music": "reading.mp3",
+    "options": [
+      {
+        "text": "Continue the adventure",
+        "nextStory": "continuara"
+      }
+    ]
+  },
+  "searchRoom": {
+    "id": "searchRoom",
+    "text": "You explore another room and find a secret door leading to a dark chamber. In the center, there's an old mirror. As you look into it, you see not your face, but a shadow that grins menacingly. To be continued...",
+    "image": "/images/searchRoom.webp",
+    "music": "mirror.mp3",
+    "options": [
+      {
+        "text": "Continue the adventure",
+        "nextStory": "continuara"
+      }
+    ]
+  },
+  "searchMirror": {
+    "id": "searchMirror",
+    "text": "You descended into the basement and find the enchanted mirror. As you approach, a dark force drags you into it, immersing you in a parallel nightmare world. To be continued...",
+    "image": "/images/searchMirror.webp",
+    "music": "enchantedMirror.mp3",
+    "options": [
+      {
+        "text": "Continue the adventure",
+        "nextStory": "continuara"
+      }
+    ]
+  },
+  "closeDiary": {
+    "id": "closeDiary",
+    "text": "You decide to close the diary and leave the library. As you walk away, you feel a presence following you. Looking back, you see a shadow fading among the trees. To be continued...",
+    "image": "/images/closeDiary.webp",
+    "music": "shadowFade.mp3",
+    "options": [
+      {
+        "text": "Continue the adventure",
+        "nextStory": "continuara"
+      }
+    ]
+  },
+  "continuara": {
+    "id": "continuara",
+    "text": "To be continued...",
+    "image": "/images/continuara.webp",
+    "music": "continuara.mp3",
+    "options": [
+      {
+        "text": "Restart Game",
+        "nextStory": "start"
+      }
+    ]
+  }
+}

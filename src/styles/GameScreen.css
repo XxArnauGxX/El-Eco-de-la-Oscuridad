@@ -1,41 +1,110 @@
 /* src/styles/GameScreen.css */
-
 .game-screen {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-color: #000; /* Fondo negro para resaltar la atmósfera */
+  color: #fff;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
-  padding: 20px;
-  background: url('../images/forest-background.jpg') no-repeat center center;
-  background-size: cover;
-  color: white;
-  text-align: center;
-  position: relative;
-  transition: opacity 0.5s ease-in-out;
+  overflow: hidden;
+  z-index: 0; /* Asegura que la niebla esté por debajo */
 }
 
-.narration {
-  font-size: 1.5rem;
-  margin-bottom: 20px;
+.title {
+  position: absolute;
+  top: 20px;
+  font-family: 'Creepster', cursive; /* Fuente temática de terror */
+  font-size: 48px;
+  color: #ff0000; /* Rojo para resaltar */
+  text-shadow: 2px 2px 8px rgba(255, 0, 0, 0.7);
+  z-index: 2; /* Por encima de las partículas */
+}
+
+.scene-image {
+  width: 80%;
   max-width: 800px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  height: auto;
+  border: 5px solid #ff0000;
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.7);
+  z-index: 2;
 }
 
-.option-buttons {
+.scene-text {
+  margin-top: 20px;
+  font-size: 24px;
+  text-align: center;
+  padding: 0 20px;
+  z-index: 2;
+}
+
+.options {
+  margin-top: 30px;
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  align-items: center;
+  z-index: 2;
+}
+
+.option-button {
+  background-color: rgba(255, 0, 0, 0.8);
+  border: 2px solid #fff;
+  color: #fff;
+  padding: 15px 30px;
+  margin: 10px;
+  font-size: 20px;
+  font-family: 'Creepster', cursive;
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.2s;
+  border-radius: 8px;
+}
+
+.option-button:hover {
+  transform: scale(1.05) translateY(-2px);
+  background-color: rgba(255, 0, 0, 1);
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.9);
+}
+
+/* Botón de reinicio */
+.restart-button {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: rgba(255, 0, 0, 0.8);
+  border: 2px solid #fff;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+.restart-button:hover {
+  transform: scale(1.05);
+  background-color: rgba(255, 0, 0, 1);
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.9);
 }
 
 /* Adaptación para dispositivos móviles */
 @media (max-width: 768px) {
-  .narration {
-    font-size: 1.2rem;
-    padding: 10px;
+  .title {
+    font-size: 32px;
   }
 
-  .game-screen {
-    padding: 10px;
+  .scene-text {
+    font-size: 18px;
+  }
+
+  .option-button {
+    padding: 12px 25px;
+    font-size: 18px;
+  }
+
+  .restart-button {
+    padding: 8px 16px;
+    font-size: 0.9rem;
   }
 }

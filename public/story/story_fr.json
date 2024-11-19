@@ -1,0 +1,194 @@
+{
+  "start": {
+    "id": "start",
+    "text": "Vous vous trouvez au bord d'une forêt ancienne au crépuscule. Un sentiment de malaise vous parcourt l'échine. Au loin, vous apercevez un vieux manoir faiblement éclairé. Que voulez-vous faire?",
+    "image": "/images/start.webp",
+    "music": "forest.mp3",
+    "options": [
+      {
+        "text": "S'aventurer dans la forêt",
+        "nextStory": "forestEntrance"
+      },
+      {
+        "text": "Se diriger vers le manoir",
+        "nextStory": "mansionEntrance"
+      }
+    ]
+  },
+  "forestEntrance": {
+    "id": "forestEntrance",
+    "text": "Vous décidez de vous aventurer dans la forêt. Les arbres sont immenses et l'obscurité s'épaissit autour de vous. Après avoir marché un moment, vous entendez un murmure provenant des buissons. Que faites-vous?",
+    "image": "/images/forestEntrance.webp",
+    "music": "forest.mp3",
+    "options": [
+      {
+        "text": "Enquêter sur le murmure",
+        "nextStory": "investigateWhisper"
+      },
+      {
+        "text": "Ignorer le son et continuer à marcher",
+        "nextStory": "ignoreSound"
+      }
+    ]
+  },
+  "mansionEntrance": {
+    "id": "mansionEntrance",
+    "text": "Vous vous dirigez vers le manoir. La porte principale est entrouverte, grinçant sous l'effet du vent. En entrant, l'obscurité vous enveloppe, mais vous distinguez un couloir éclairé au loin. Que faites-vous?",
+    "image": "/images/mansionEntrance.webp",
+    "music": "mansion.mp3",
+    "options": [
+      {
+        "text": "Avancer vers le couloir éclairé",
+        "nextStory": "walkCorridor"
+      },
+      {
+        "text": "Chercher une autre entrée",
+        "nextStory": "searchAlternative"
+      }
+    ]
+  },
+  "investigateWhisper": {
+    "id": "investigateWhisper",
+    "text": "Vous suivez le son et trouvez une petite cabane cachée parmi les arbres. La porte est légèrement ouverte. En entrant, une silhouette spectrale apparaît devant vous. Comment réagissez-vous?",
+    "image": "/images/investigateWhisper.webp",
+    "music": "ghost.wav",
+    "options": [
+      {
+        "text": "Parler au spectre",
+        "nextStory": "speakGhost"
+      },
+      {
+        "text": "Fuir rapidement",
+        "nextStory": "continuara"
+      }
+    ]
+  },
+  "ignoreSound": {
+    "id": "ignoreSound",
+    "text": "Vous décidez d'ignorer le murmure et de continuer à marcher. Cependant, la sensation d'être observé ne disparaît pas. Soudain, une ombre glisse entre les arbres vers vous. À suivre...",
+    "image": "/images/ignoreSound.webp",
+    "music": "shadow.mp3",
+    "options": [
+      {
+        "text": "Continuer l'aventure",
+        "nextStory": "continuara"
+      }
+    ]
+  },
+  "speakGhost": {
+    "id": "speakGhost",
+    "text": "Vous parlez au spectre, qui révèle qu'il a besoin d'aide pour trouver la paix. Il vous remet un parchemin ancien et disparaît lentement. Que faites-vous maintenant?",
+    "image": "/images/speakGhost.webp",
+    "music": "ghost.wav",
+    "options": [
+      {
+        "text": "Chercher des indices dans la cabane",
+        "nextStory": "searchClues"
+      },
+      {
+        "text": "Quitter la cabane",
+        "nextStory": "continuara"
+      }
+    ]
+  },
+  "walkCorridor": {
+    "id": "walkCorridor",
+    "text": "Vous avancez dans le couloir éclairé et trouvez une bibliothèque ancienne. Parmi les livres, vous voyez un journal abandonné. Que faites-vous?",
+    "image": "/images/walkCorridor.webp",
+    "music": "library.mp3",
+    "options": [
+      {
+        "text": "Lire le journal",
+        "nextStory": "readDiary"
+      },
+      {
+        "text": "Chercher une autre pièce",
+        "nextStory": "continuara"
+      }
+    ]
+  },
+  "searchAlternative": {
+    "id": "searchAlternative",
+    "text": "Vous cherchez une autre entrée et trouvez une fenêtre brisée à l'étage supérieur. Vous montez et parvenez à entrer silencieusement. Cependant, une présence sombre vous observe depuis les ombres. À suivre...",
+    "image": "/images/searchAlternative.webp",
+    "music": "darkPresence.mp3",
+    "options": [
+      {
+        "text": "Continuer l'aventure",
+        "nextStory": "continuara"
+      }
+    ]
+  },
+  "searchClues": {
+    "id": "searchClues",
+    "text": "Vous explorez la cabane et trouvez une pièce secrète où vous découvrez une clé rouillée et plus de parchemins anciens. La clé semble s'adapter à une porte cachée dans le manoir. À suivre...",
+    "image": "/images/searchClues.webp",
+    "music": "secretRoom.mp3",
+    "options": [
+      {
+        "text": "Retourner au manoir",
+        "nextStory": "continuara"
+      }
+    ]
+  },
+  "readDiary": {
+    "id": "readDiary",
+    "text": "Vous lisez le journal et découvrez des détails sur d'anciens rituels pour communiquer avec l'au-delà. Il y a une page qui parle d'un miroir enchanté dans le sous-sol. À suivre...",
+    "image": "/images/readDiary.webp",
+    "music": "reading.mp3",
+    "options": [
+      {
+        "text": "Continuer l'aventure",
+        "nextStory": "continuara"
+      }
+    ]
+  },
+  "searchRoom": {
+    "id": "searchRoom",
+    "text": "Vous explorez une autre pièce et trouvez une porte secrète menant à une chambre sombre. Au centre, il y a un vieux miroir. En vous regardant dedans, vous ne voyez pas votre visage, mais une ombre qui sourit sinistrement. À suivre...",
+    "image": "/images/searchRoom.webp",
+    "music": "mirror.mp3",
+    "options": [
+      {
+        "text": "Continuer l'aventure",
+        "nextStory": "continuara"
+      }
+    ]
+  },
+  "searchMirror": {
+    "id": "searchMirror",
+    "text": "Vous descendez au sous-sol et trouvez le miroir enchanté. En vous approchant, une force sombre vous attire vers lui, vous plongeant dans un monde parallèle de cauchemars. À suivre...",
+    "image": "/images/searchMirror.webp",
+    "music": "enchantedMirror.mp3",
+    "options": [
+      {
+        "text": "Continuer l'aventure",
+        "nextStory": "continuara"
+      }
+    ]
+  },
+  "closeDiary": {
+    "id": "closeDiary",
+    "text": "Vous décidez de fermer le journal et de quitter la bibliothèque. En vous éloignant, vous ressentez une présence vous suivant. En regardant en arrière, vous voyez une ombre qui se dévore parmi les arbres. À suivre...",
+    "image": "/images/closeDiary.webp",
+    "music": "shadowFade.mp3",
+    "options": [
+      {
+        "text": "Continuer l'aventure",
+        "nextStory": "continuara"
+      }
+    ]
+  },
+  "continuara": {
+    "id": "continuara",
+    "text": "À suivre...",
+    "image": "/images/continuara.webp",
+    "music": "continuara.mp3",
+    "options": [
+      {
+        "text": "Recommencer le jeu",
+        "nextStory": "start"
+      }
+    ]
+  }
+}

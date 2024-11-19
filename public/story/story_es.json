@@ -1,0 +1,194 @@
+{
+  "start": {
+    "id": "start",
+    "text": "Te encuentras al borde de un antiguo bosque al anochecer. Una sensación de inquietud te recorre la espalda. En la distancia, ves una vieja mansión iluminada tenuemente. ¿Qué deseas hacer?",
+    "image": "/images/start.webp",
+    "music": "forest.mp3",
+    "options": [
+      {
+        "text": "Adentrarse en el bosque",
+        "nextStory": "forestEntrance"
+      },
+      {
+        "text": "Dirigirse hacia la mansión",
+        "nextStory": "mansionEntrance"
+      }
+    ]
+  },
+  "forestEntrance": {
+    "id": "forestEntrance",
+    "text": "Decides adentrarte en el bosque. Los árboles se alzan altos y la oscuridad se espesa a tu alrededor. Después de caminar un rato, escuchas un susurro proveniente de entre los arbustos. ¿Qué haces?",
+    "image": "/images/forestEntrance.webp",
+    "music": "forest.mp3",
+    "options": [
+      {
+        "text": "Investigar el susurro",
+        "nextStory": "investigateWhisper"
+      },
+      {
+        "text": "Ignorar el sonido y seguir caminando",
+        "nextStory": "ignoreSound"
+      }
+    ]
+  },
+  "mansionEntrance": {
+    "id": "mansionEntrance",
+    "text": "Te diriges hacia la mansión. La puerta principal está entreabierta, chirriando con el viento. Al entrar, la oscuridad te envuelve, pero puedes distinguir un corredor iluminado al fondo. ¿Qué haces?",
+    "image": "/images/mansionEntrance.webp",
+    "music": "mansion.mp3",
+    "options": [
+      {
+        "text": "Avanzar hacia el corredor iluminado",
+        "nextStory": "walkCorridor"
+      },
+      {
+        "text": "Buscar otra entrada",
+        "nextStory": "searchAlternative"
+      }
+    ]
+  },
+  "investigateWhisper": {
+    "id": "investigateWhisper",
+    "text": "Sigues el sonido y encuentras una pequeña cabaña oculta entre los árboles. La puerta está entreabierta. Al entrar, una figura espectral aparece ante ti. ¿Cómo reaccionas?",
+    "image": "/images/investigateWhisper.webp",
+    "music": "ghost.wav",
+    "options": [
+      {
+        "text": "Hablar con el espectro",
+        "nextStory": "speakGhost"
+      },
+      {
+        "text": "Huir rápidamente",
+        "nextStory": "continuara"
+      }
+    ]
+  },
+  "ignoreSound": {
+    "id": "ignoreSound",
+    "text": "Decides ignorar el susurro y seguir caminando. Sin embargo, la sensación de ser observado no desaparece. De repente, una sombra se desliza entre los árboles hacia ti. Continuará...",
+    "image": "/images/ignoreSound.webp",
+    "music": "shadow.mp3",
+    "options": [
+      {
+        "text": "Continuar la aventura",
+        "nextStory": "continuara"
+      }
+    ]
+  },
+  "speakGhost": {
+    "id": "speakGhost",
+    "text": "Le hablas al espectro, quien te revela que necesita ayuda para encontrar su paz. Te entrega un pergamino antiguo y desaparece lentamente. ¿Qué haces ahora?",
+    "image": "/images/speakGhost.webp",
+    "music": "ghost.wav",
+    "options": [
+      {
+        "text": "Buscar pistas en la cabaña",
+        "nextStory": "searchClues"
+      },
+      {
+        "text": "Salir de la cabaña",
+        "nextStory": "continuara"
+      }
+    ]
+  },
+  "walkCorridor": {
+    "id": "walkCorridor",
+    "text": "Avanzas por el corredor iluminado y encuentras una biblioteca antigua. Entre los libros, ves un diario abandonado. ¿Qué haces?",
+    "image": "/images/walkCorridor.webp",
+    "music": "library.mp3",
+    "options": [
+      {
+        "text": "Leer el diario",
+        "nextStory": "readDiary"
+      },
+      {
+        "text": "Buscar otra habitación",
+        "nextStory": "continuara"
+      }
+    ]
+  },
+  "searchAlternative": {
+    "id": "searchAlternative",
+    "text": "Buscas otra entrada y encuentras una ventana rota en el piso superior. Te subes y logras entrar silenciosamente. Sin embargo, una presencia oscura te observa desde las sombras. Continuará...",
+    "image": "/images/searchAlternative.webp",
+    "music": "darkPresence.mp3",
+    "options": [
+      {
+        "text": "Continuar la aventura",
+        "nextStory": "continuara"
+      }
+    ]
+  },
+  "searchClues": {
+    "id": "searchClues",
+    "text": "Exploras la cabana y encuentras una habitación secreta donde descubres una llave oxidada y más pergaminos antiguos. La llave parece encajar en una puerta escondida en la mansión. Continuará...",
+    "image": "/images/searchClues.webp",
+    "music": "secretRoom.mp3",
+    "options": [
+      {
+        "text": "Volver a la mansión",
+        "nextStory": "continuara"
+      }
+    ]
+  },
+  "readDiary": {
+    "id": "readDiary",
+    "text": "Lees el diario y descubres detalles sobre rituales antiguos para comunicarte con el más allá. Hay una página que habla de un espejo encantado en el sótano. Continuará...",
+    "image": "/images/readDiary.webp",
+    "music": "reading.mp3",
+    "options": [
+      {
+        "text": "Continuar la aventura",
+        "nextStory": "continuara"
+      }
+    ]
+  },
+  "searchRoom": {
+    "id": "searchRoom",
+    "text": "Exploras otra habitación y encuentras una puerta secreta que lleva a una cámara oscura. En el centro, hay un espejo antiguo. Al mirarte, ves reflejado no tu rostro, sino una sombra que te sonríe macabramente. Continuará...",
+    "image": "/images/searchRoom.webp",
+    "music": "mirror.mp3",
+    "options": [
+      {
+        "text": "Continuar la aventura",
+        "nextStory": "continuara"
+      }
+    ]
+  },
+  "searchMirror": {
+    "id": "searchMirror",
+    "text": "Descendiste al sótano y encuentras el espejo encantado. Al acercarte, una fuerza oscura te arrastra hacia él, sumergiéndote en un mundo paralelo de pesadilla. Continuará...",
+    "image": "/images/searchMirror.webp",
+    "music": "enchantedMirror.mp3",
+    "options": [
+      {
+        "text": "Continuar la aventura",
+        "nextStory": "continuara"
+      }
+    ]
+  },
+  "closeDiary": {
+    "id": "closeDiary",
+    "text": "Decides cerrar el diario y salir de la biblioteca. Mientras te alejas, sientes que una presencia te sigue. Al mirar atrás, ves una sombra que se desvanece entre los árboles. Continuará...",
+    "image": "/images/closeDiary.webp",
+    "music": "shadowFade.mp3",
+    "options": [
+      {
+        "text": "Continuar la aventura",
+        "nextStory": "continuara"
+      }
+    ]
+  },
+  "continuara": {
+    "id": "continuara",
+    "text": "Continuará...",
+    "image": "/images/continuara.webp",
+    "music": "continuara.mp3",
+    "options": [
+      {
+        "text": "Reiniciar Juego",
+        "nextStory": "start"
+      }
+    ]
+  }
+}

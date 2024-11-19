@@ -1,45 +1,61 @@
 /* src/styles/Button.css */
 
 .custom-button {
-    padding: 15px 40px;
-    font-size: 1.5rem;
-    background-color: rgba(0, 0, 0, 0.8);
-    color: #ff0000;
-    border: 2px solid #ff0000;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
-    font-family: 'Creepster', cursive;
-    position: relative;
-    overflow: hidden;
+  padding: 15px 40px;
+  font-size: 1.5rem;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #ff0000;
+  border: 2px solid #ff0000;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+  font-family: 'Creepster', cursive;
+  position: relative;
+  overflow: hidden;
+}
+
+.custom-button::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  top: 0;
+  left: -100%;
+  transition: left 0.3s;
+}
+
+.custom-button:hover::before {
+  left: 100%;
+}
+
+.custom-button:hover {
+  background-color: rgba(255, 0, 0, 0.2);
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #ff0000;
+}
+
+/* Variante para botones de opciones */
+.option-button.custom-button {
+  background-color: rgba(255, 0, 0, 0.8);
+  border: 2px solid #fff;
+  color: #fff;
+}
+
+.option-button.custom-button:hover {
+  background-color: rgba(255, 0, 0, 1);
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.9);
+}
+
+/* Adaptación para dispositivos móviles */
+@media (max-width: 768px) {
+  .custom-button {
+    padding: 12px 30px;
+    font-size: 1.2rem;
   }
-  
-  .custom-button::before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.1);
-    top: 0;
-    left: -100%;
-    transition: left 0.3s;
+
+  .option-button.custom-button {
+    padding: 10px 20px;
+    font-size: 1rem;
   }
-  
-  .custom-button:hover::before {
-    left: 100%;
-  }
-  
-  .custom-button:hover {
-    background-color: rgba(255, 0, 0, 0.2);
-    transform: scale(1.05);
-    box-shadow: 0 0 20px #ff0000;
-  }
-  
-  /* Adaptación para dispositivos móviles */
-  @media (max-width: 768px) {
-    .custom-button {
-      padding: 12px 30px;
-      font-size: 1.2rem;
-    }
-  }
-  
+}
